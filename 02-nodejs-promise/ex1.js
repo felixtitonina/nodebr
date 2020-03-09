@@ -16,7 +16,19 @@
 // fazRequisicao(false)
 //     .then(console.log)
 //     .catch(console.error);
-let promise1= new Promise ((resolve, reject) => {
-    
+let valor = 4;
+let obj = {
+    "msg": `texto complementar`
+}
+let promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if (valor % 2 == 0) {
+            resolve(`o valor divisivel por 2`)
+        }
+        resolve(`Valor não divisivel por 2, valor igual a ${valor}, ${JSON.stringify(obj.msg)}`)
+    }, 500)
 })
 
+promise1
+    .then(console.log)
+    .catch(console.error)
